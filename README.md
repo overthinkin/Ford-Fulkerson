@@ -41,37 +41,33 @@ n개의 노드를 가진 가중치 그래프가 존재할 때,
 Augmenting Path를 토대로 실제 흘린 값을 역방향, 더 흘릴 수 있는 값을 원래 흐름 방향으로 정하여 새로운 네트워크를 그리면 새로운 길을 더 찾을 수 있다.
 새로운 길에서 남은 용량이 있다면 유량을 추가하여 최대 유량을 늘리게 되는 방식이다.
 
-#### 그래프로 Ford-Fulkerson Algorithm BFS 방식 계산해보기
+#### 그래프로 알고리즘 계산해보기
 
- 사진1
+ ![사진1](https://user-images.githubusercontent.com/80513292/165715241-01e42a10-97f2-498d-a84e-6d3834d110b5.jpg)
 
 노드 10개 (qwertyuiop) / 간선 12개 / 유량은 보라색 글씨로 표기했다.
 
-사진2
+![사진2](https://user-images.githubusercontent.com/80513292/165715360-5365f43a-a094-4414-847d-28f6ec6b697f.jpg)
 
 깊이우선 탐색으로 최초로 찾은 길 2개에서 흘려보낸 유량은 총 13이다.
 
-사진3
+![사진3](https://user-images.githubusercontent.com/80513292/165715429-6cc803f7-b5d6-4458-a31b-44a5b080f1fe.jpg)
 
 Residual Network를 통해 형광초록색으로 표기한 길에서 사용하고 남은 용량을 새로운 길(주황색)이 사용할 수 있다.
 
-사진4
+![사진4](https://user-images.githubusercontent.com/80513292/165715525-ac56b2ca-d529-4a86-bdab-9d207f026418.jpg)
 
-길 3가지에서 흘려보낸 양은 총 20이다.
+사진1-4까지의 과정을 수행한 뒤의 Residual Network 그래프이다. 길 3가지에서 흘려보낸 양은 총 20이다.
 
-사진5
+![사진6](https://user-images.githubusercontent.com/80513292/165715662-4277ddbb-f1ea-4576-9166-4e75ccda741b.jpg)
 
-사진1-4까지의 과정을 수행한 뒤의 Residual Network 그래프이다.
+남은 길(보라색)에 유량 3을 sink까지 보낼 수 있다.
 
-사진6
-
-남은 길(보라색)에 최소 용량 3을 sink까지 보낼 수 있다.
-
-사진7
+![사진7](https://user-images.githubusercontent.com/80513292/165715814-bc2d7317-9b20-43e6-b0c4-46c05ea37532.jpg)
 
  Ford-Fulkerson Algorithm으로 총 4가지의 길을 통해 최대유량을 보낸 것을 확인했다.
 
-사진8
+![사진8](https://user-images.githubusercontent.com/80513292/165715896-335e3fec-d211-4fca-b901-702d9de04b7f.jpg)
 
 최대유량을 source에서 흘려보낸 양과 sink에서 받은 양을 계산하여 검증했다.
 
@@ -138,19 +134,25 @@ g.add_edge('u','o',5)
 g.add_edge('o','p',15)
 ```
 
-결과사진
+![결과사진](https://user-images.githubusercontent.com/80513292/165716067-4b5101d2-79da-4f33-a4f3-58c433b5b0f7.png)
 
-과 그림의 결과를 비교했을 때 최대유량 값이 동일한 것을 확인하였다.
+[코딩의 결과와 그래프의 결과를 비교했을 때 최대유량 값이 동일한 것을 확인하였다.](#그래프로-알고리즘-계산해보기)
+
+
+
+
+
+
+
+
 
 
 
 ## [최대 유량 문제를 해결하는 다른 알고리즘]
 
-#### 디닉 알고리즘 (Dinitz' Algorithm) 
+#### [디니츠 알고리즘 (Dinitz' Algorithm)](https://gazelle-and-cs.tistory.com/84?category=875540) 
 
-디닉 알고리즘은 포드풀커슨의 DFS, BFS 방식을 혼용한 탐색 방법을 사용한다.
-
-
+디니츠 알고리즘은 포드풀커슨의 DFS, BFS 방식을 혼용한 탐색 방법을 사용한다.
 
 
 
